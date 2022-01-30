@@ -10,14 +10,14 @@ soup = BeautifulSoup(r.text, 'html.parser')
 
 
 class Notice(object):
-    title = ""
-    link = ""
+    article_title = ""
+    article_link = ""
 
 
 def make_notice(title, link):
     notice = Notice()
-    notice.title = title
-    notice.link = link
+    notice.article_title = title
+    notice.article_link = link
     return notice
 
 
@@ -31,5 +31,5 @@ for notice in soup.find_all("a", attrs={"class": "eBKpx"}):
     notices.append(notice_data)
 
 for notice in notices:
-    print("Title:", notice.title)
-    print("Link:", notice.link, "\n")
+    print("Title:", notice.article_title)
+    print("Link:", notice.article_link, "\n")
